@@ -1,0 +1,97 @@
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    --circle-size: 20vmin;
+    grid-row: span 2;
+    position: relative;
+    border-radius: 50%;
+    height: var(--circle-size);
+    width: var(--circle-size);
+}
+
+#circle_btn {
+    box-shadow: var(--shadow);
+    z-index: 10;
+    cursor: pointer;
+    --circle-btn-size: calc(var(--circle-size) * .65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50%;
+    width: var(--circle-btn-size);
+    height: var(--circle-btn-size);
+}
+
+#circle_btn.shadow {
+    box-shadow: var(--inner-shadow);
+}
+
+.circle-svg {
+    position: absolute;
+    height: calc(var(--circle-btn-size) * .5);
+    width: calc(var(--circle-btn-size) * .5);
+    fill: var(--primary);
+}
+
+.pause.visibility {
+    opacity: 1;
+}
+
+.play.visibility {
+    opacity: 0;
+}
+
+.pause, .play {
+    transition: all linear .2s;
+}
+
+.play {
+    opacity: 1;
+}
+
+.pause {
+    opacity: 0;
+}
+
+.circle_back-1, .circle_back-2 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.circle_back-1 {
+    height: calc(var(--circle-size) * .85);
+    width: calc(var(--circle-size) * .85);
+    box-shadow: .4em .4em .8em var(--greyLight-2), -.4em -.4em 8em var(--white);
+    animation: waves 2s linear infinite;
+}
+
+.circle_back-2 {
+    height: calc(var(--circle-size) * .65);
+    width: calc(var(--circle-size) * .65);
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    animation: waves 2s linear infinite;
+}
+
+.circle_back-1.paused, .circle_back-2.paused {
+    animation-play-state: paused;
+}
+
+@keyframes waves {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

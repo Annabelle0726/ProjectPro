@@ -1,0 +1,301 @@
+.box-container {
+    gap: 5vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-row: span 2;
+}
+
+.switch-box, .check-box, .icon-box, .radio-box {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+}
+
+
+.switch > input, .check > input, .radio > input, .label-1 > input {
+    display: none;
+}
+
+label {
+    justify-content: center;
+    box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+label::before, label::after {
+    transition: all .5s ease;
+    content: "";
+    position: absolute;
+}
+
+label::after {
+    z-index: 2;
+    cursor: pointer;
+}
+
+.switch-box {
+    gap: 5vmin;
+}
+
+.switch {
+    height: 5.5vmin;
+    width: 11vmin;
+}
+
+.switch > label {
+    border-radius: 1.6rem;
+}
+
+.switch > label::before {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: linear-gradient(330deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+    border-radius: inherit;
+}
+
+.switch > label::after {
+    width: 35%;
+    left: 10%;
+    height: 70%;
+    background: var(--greyDark);
+    border-radius: 50%;
+}
+
+input[type="checkbox"]:checked + .switch-label::after {
+    background: var(--white);
+    left: 55%;
+}
+
+input[type="checkbox"]:checked + .switch-label::before {
+    opacity: 1;
+}
+
+.check-box, .radio-box {
+    gap: 8vmin;
+}
+
+.check, .radio {
+    height: 6vmin;
+    width: 6vmin;
+}
+
+.check > label {
+    border-radius: 20%;
+}
+
+.check > label > i {
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all ease .3s;
+    font-family: 'Material Icons', serif;
+}
+
+input[type="checkbox"]:checked + .check-label,
+input[type="radio"]:checked + .radio-label {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+input[type="checkbox"]:checked + .check-label > i {
+    color: var(--primary);
+}
+
+.radio-label, .radio-label::before {
+    border-radius: 50%;
+}
+
+.radio-label::before {
+    width: 55%;
+    height: 55%;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + .radio-label::before {
+    background: var(--primary);
+}
+
+.button-container {
+    align-items: center;
+    justify-content: center;
+    gap: 5vmin;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container > .button {
+    width: 20vmin;
+    border-radius: var(--label-border-radius);
+    height: 7vmin;
+    display: flex;
+    cursor: pointer;
+    font-size: 1.2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.button.btn-primary {
+    transition: all .35s ease;
+    color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-light), inset -0.2rem -0.2rem 1rem var(--primary-dark), 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    background: var(--primary);
+}
+
+.button.btn-primary:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.button.btn-primary:active {
+    box-shadow: inset 0.3rem 0.3rem 1rem var(--primary-dark), inset -0.2rem -0.2rem 1rem var(--primary-light);
+}
+
+.button.btn-secondary {
+    transition: all .35s ease;
+    box-shadow: 0.3rem 0.3rem 0.3rem var(--greyLight-2), -0.2rem -0.2rem 0.1rem var(--white);
+    color: var(--greyLight-3);
+}
+
+.button.btn-secondary:hover {
+    color: var(--primary);
+}
+
+.button.btn-secondary:active {
+    box-shadow: var(--inner-shadow);
+}
+
+.label-container {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2vmin;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    --label-width: 28vmin;
+    --label-height: 7vmin;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: var(--label-border-radius);
+    height: var(--label-height);
+    width: var(--label-width);
+}
+
+.label-1 {
+    box-shadow: var(--shadow);
+    gap: .2vmin;
+}
+
+.label-1 .tab {
+    cursor: pointer;
+    box-shadow: none;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--label-height) * .7);
+    transition: all ease .3s;
+    color: var(--greyLight-2);
+    width: calc(var(--label-width) * .25);
+}
+
+.tab:hover {
+    color: var(--primary);
+}
+
+.label-1 > input[type="radio"]:checked + .tab {
+    box-shadow: var(--inner-shadow);
+    color: var(--primary);
+}
+
+.label-2 {
+    transition: all ease .5s;
+    box-shadow: var(--shadow);
+    gap: .5vmin;
+}
+
+.label-2:active, .label-2:focus {
+    box-shadow: var(--inner-shadow);
+}
+
+.label-input {
+    width: 90%;
+}
+
+.label-input::placeholder {
+    transition: all .3s ease;
+    color: var(--greyDark);
+}
+
+.label-input:hover::placeholder {
+    color: gray;
+}
+
+.search-btn {
+    text-align: center;
+    background: none;
+    border: none;
+    margin-left: 1vmin;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    display: inline-block;
+    font-size: 25px;
+}
+
+.search-btn:focus, .search-btn:active {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.search-btn:hover svg {
+    fill: var(--primary);
+}
+
+
+.icon-box {
+    height: 10vmin;
+    width: 25vmin;
+    gap: 3vmin;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    border-radius: 50%;
+    height: 6vmin;
+    width: 6vmin;
+    background: var(--white);
+}
+
+.icon svg, .icon {
+    transition: all ease .5s;
+}
+
+.icon svg:hover, .icon svg:active {
+    fill: var(--primary);
+}
+
+.icon:active {
+    box-shadow: var(--inner-shadow);
+}

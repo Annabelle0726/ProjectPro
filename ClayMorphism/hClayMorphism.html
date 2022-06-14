@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://img.icons8.com/clouds/100/000000/reddit.png" rel="shortcut icon">
+    <title>Clay morphism</title>
+    <link href="cNeumorphic.css" rel="stylesheet">
+    <script defer src="../Clock2/jsClock.js"></script>
+    <link href="../Clock2/cClock.css" rel="stylesheet">
+    <script defer src="slider.js"></script>
+    <script defer src="circle.js"></script>
+    <link href="clock.css" rel="stylesheet">
+    <link href="boxes.css" rel="stylesheet">
+    <link href="circle.css" rel="stylesheet">
+    <link href="slider_box.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <div class="box-container">
+            <div class="switch-box">
+                <div class="switch">
+                    <input id="switch1" type="checkbox">
+                    <label class="switch-label" for="switch1"></label>
+                </div>
+                <div class="switch">
+                    <input checked="checked" id="switch2" type="checkbox">
+                    <label class="switch-label" for="switch2"></label>
+                </div>
+            </div>
+            <div class="check-box">
+                <div class="check">
+                    <input id="check1" type="checkbox">
+                    <label class="check-label" for="check1">
+                        <i class="material-icons">done</i>
+                    </label>
+                </div>
+                <div class="check">
+                    <input checked="checked" id="check2" type="checkbox">
+                    <label class="check-label" for="check2">
+                        <i class="material-icons">done</i>
+                    </label>
+                </div>
+            </div>
+            <div class="radio-box">
+                <div class="radio">
+                    <input id="radio1" type="radio" value="1">
+                    <label class="radio-label" for="radio1"></label>
+                </div>
+                <div class="radio">
+                    <input checked="checked" id="radio2" type="radio" value="2">
+                    <label class="radio-label" for="radio2"></label>
+                </div>
+            </div>
+        </div>
+        <div class="clock">
+            <div class="hands-container pos inner-circle">
+                <p class="hand second" data-second
+                   style="transform: rotate(calc(var(--rotation-deg-hand) * 1deg)); bottom: 8.6vmin"></p>
+                <p class="hand minute" data-minute
+                   style="transform: rotate(calc(var(--rotation-deg-hand) * 1deg));
+bottom: 8.4vmin;"></p>
+                <p class="hand hour" data-hour
+                   style="bottom: 8.45vmin;
+                   transform: rotate(calc(var(--rotation-deg-hand) * 1deg)) translate(0%, 0px)"></p>
+                <p class="pointer pos"></p>
+            </div>
+            <div class="marker-container pos">
+                <span class="marker marker-1"></span>
+                <span class="marker marker-2"></span>
+                <span class="marker marker-3"></span>
+                <span class="marker marker-4"></span>
+            </div>
+        </div>
+        <div class="label-container">
+            <div class="label label-1">
+                <input checked id="tab-1" type="radio" value="1">
+                <label class="tab" for="tab-1">Tab1
+                </label>
+                <input id="tab-2" type="radio" value="2">
+                <label class="tab" for="tab-2">Tab2
+                </label>
+                <input id="tab-3" type="radio" value="3">
+                <label class="tab" for="tab-3">Tab3
+                </label>
+            </div>
+            <div class="label label-2">
+                <button class="search-btn">
+                    <svg fill="#9baacf" height="24px" style="transform: translate(1px, 2px)"
+                         viewBox="0 0 24 24" width="24px"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+                <input class="label-input" placeholder="Search.." type="text">
+            </div>
+            <div class="label label-2">
+                <input class="label-input" placeholder="Type anything" type="text">
+            </div>
+        </div>
+
+        <div class="button-container">
+            <div class="button btn-primary">
+                Button
+            </div>
+            <div class="button btn-secondary"> Button
+            </div>
+        </div>
+        <div class="circle">
+          <span id="circle_btn">
+            <svg class="circle-svg play" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="M208 432h-48a16 16 0 01-16-16V96a16 16 0 0116-16h48a16 16 0 0116 16v320a16 16 0 01-16 16zM352 432h-48a16 16 0 01-16-16V96a16 16 0 0116-16h48a16 16 0 0116 16v320a16 16 0 01-16 16z"></path>
+            </svg>
+            <svg class="circle-svg pause" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path
+                    d="M133 440a35.37 35.37 0 01-17.5-4.67c-12-6.8-19.46-20-19.46-34.33V111c0-14.37 7.46-27.53 19.46-34.33a35.13 35.13 0 0135.77.45l247.85 148.36a36 36 0 010 61l-247.89 148.4A35.5 35.5 0 01133 440z"></path></svg>
+          </span>
+            <span class="circle_back-1"></span>
+            <span class="circle_back-2"></span>
+        </div>
+
+        <div class="icon-box">
+            <div class="icon">
+                <svg fill="#bec8e4" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </div>
+            <div class="icon">
+                <svg fill="#bec8e4" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+            </div>
+            <div class="icon">
+                <svg enable-background="new 0 0 24 24" fill="#bec8e4" height="24px"
+                     viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path d="M0,0h24v24H0V0z" fill="none"/>
+                        <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="slider_box">
+            <span class="pos-btn" id="find"></span>
+            <span class="slider_color"></span>
+            <span class="slider_tooltip"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
